@@ -1,0 +1,943 @@
+:root {
+  --bg: #0a0a0f;
+  --card: #14141b;
+  --primary: #7d2ae8;
+  --accent: #00d4ff;
+  --text: #f0f0ff;
+  --gray: #a0a0c0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.5;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Навбар */
+.navbar {
+  padding: 25px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #222;
+}
+
+.logo {
+  font-size: 3.8rem;
+  font-weight: 900;
+  letter-spacing: -1.5px;
+  line-height: 1;
+}
+
+.logo span {
+  background: linear-gradient(90deg, #8e2de2, #00d4ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Кнопка */
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary), #5e0fd6);
+  color: white;
+  padding: 12px 28px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 700;
+  transition: all 0.3s;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(125, 42, 232, 0.4);
+}
+
+.btn-primary.large  { padding: 16px 40px; font-size: 1.3rem; }
+.btn-primary.huge   { padding: 20px 60px; font-size: 1.6rem; }
+.btn-primary.center { display: block; margin: 30px auto; text-align: center; max-width: 300px; }
+
+/* Hero */
+.hero {
+  padding: 100px 0 140px;
+  background: radial-gradient(circle at 20% 80%, #1a0033, transparent 60%);
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 4.5rem;
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+
+.hero h1 span {
+  color: var(--accent);
+  display: block;
+  font-size: 3.5rem;
+}
+
+.hero p {
+  font-size: 1.5rem;
+  color: var(--gray);
+  margin-bottom: 40px;
+}
+
+.hero-main-img {
+  width: 100%;
+  max-width: 900px;
+  height: auto;
+  display: block;
+  margin: 40px auto 0;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.7);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+/* Секции */
+.section {
+  padding: 120px 0;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 3.5rem;
+  margin-bottom: 60px;
+  font-weight: 900;
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, #8e2de2, #00d4ff, #ff6ec7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Slides-row (общий для всех галерей) */
+.slides-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+  margin: 60px 0;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.slides-row img {
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+  border: 2px solid rgba(100, 100, 150, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.slides-row img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 25px 60px rgba(0,0,0,0.8);
+}
+
+/* Специально для блока Заправок — большая картинка на всю ширину контента */
+.fuel .slides-row {
+  width: 100%;
+}
+
+.fuel .slides-row img {
+  width: 100%;
+  max-width: 100%;
+  min-height: 850px;              /* очень большая высота — текст будет хорошо виден */
+  height: auto;
+  object-fit: contain;
+  display: block;
+  margin: 50px 0 80px 0;
+  border-radius: 20px;
+  box-shadow: 0 25px 70px rgba(0,0,0,0.8);
+}
+
+/* Калькулятор */
+.calc-card {
+  background: var(--card);
+  padding: 50px;
+  border-radius: 32px;
+  border: 1px solid #2a2a40;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.calc-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.calc-inputs label {
+  display: block;
+  margin: 20px 0 12px;
+  font-weight: 600;
+}
+
+.calc-inputs select,
+.calc-inputs input[type="range"] {
+  width: 100%;
+  padding: 16px;
+  border-radius: 12px;
+  background: #1e1e2e;
+  border: 1px solid #333;
+  color: white;
+  font-size: 1.1rem;
+}
+
+.result-circle {
+  width: 260px;
+  height: 260px;
+  border: 5px solid var(--primary);
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  box-shadow: 0 0 40px rgba(125,42,232,0.3);
+}
+
+#result {
+  font-size: 3.8rem;
+  font-weight: 900;
+  color: var(--accent);
+}
+
+/* Другие гриды */
+.steps-grid,
+.reviews-grid,
+.tariff-list,
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+}
+
+.step img,
+.reviews-grid img {
+  width: 100%;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+/* Финальный CTA */
+.cta-final {
+  padding: 140px 0 100px;
+  text-align: center;
+  background: linear-gradient(to bottom, transparent, #1a0033);
+}
+
+.cta-final h2 {
+  font-size: 3.8rem;
+  margin-bottom: 40px;
+}
+
+/* Футер */
+footer {
+  padding: 60px 0;
+  text-align: center;
+  color: var(--gray);
+  border-top: 1px solid #222;
+}
+
+/* Медиа-запросы */
+@media (max-width: 900px) {
+  .hero {
+    padding: 80px 0 100px;
+  }
+  .hero h1 {
+    font-size: 3.2rem;
+  }
+  .hero h1 span {
+    font-size: 2.6rem;
+  }
+  .hero-main-img {
+    max-width: 100%;
+    margin: 30px auto 0;
+    border-radius: 16px;
+  }
+  .section {
+    padding: 80px 0;
+  }
+  .calc-grid,
+  .slides-row {
+    grid-template-columns: 1fr;
+  }
+  .fuel .slides-row img {
+    min-height: 600px;
+    margin: 40px 0 60px 0;
+    border-radius: 14px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .fuel .slides-row img {
+    max-width: 1400px;
+    margin: 50px auto 80px;
+  }
+}
+
+/* Последний breaker для надёжности */
+.final-cache-breaker-20260301-v10 {}
+
+.full-bleed {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  padding: 0;
+}
+
+.full-width-fuel {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ===== ФИКС: Полноэкранное изображение для Яндекс.Заправки ===== */
+
+/* 1. Отключаем grid-раскладку для full-bleed */
+.fuel .slides-row.full-bleed {
+  display: block !important;
+  grid-template-columns: none !important;
+  gap: 0 !important;
+  max-width: none !important;
+  margin: 0 !important;
+  width: 100vw !important;
+  margin-left: calc(50% - 50vw) !important;
+  margin-right: calc(50% - 50vw) !important;
+  padding: 0 !important;
+}
+
+/* 2. Переопределяем стили изображения с высокой специфичностью */
+.fuel .slides-row.full-bleed img.full-width-fuel {
+  width: 100vw !important;
+  max-width: none !important;
+  min-height: auto !important;
+  height: auto !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  border: none !important;
+  object-fit: cover;
+  display: block !important;
+}
+
+/* 3. Убираем горизонтальный скролл, который может появиться */
+body {
+  overflow-x: hidden;
+}
+
+/* 4. На мобильных — адаптация */
+@media (max-width: 900px) {
+  .fuel .slides-row.full-bleed img.full-width-fuel {
+    width: 100vw !important;
+    min-height: auto !important;
+  }
+}
+/* ===== ФИКС v2: 85% ширины экрана на десктопе для Яндекс.Заправки ===== */
+
+/* Базовые стили для full-bleed — центрирование + 85vw на ПК */
+.fuel .slides-row.full-bleed {
+  display: block !important;
+  grid-template-columns: none !important;
+  gap: 0 !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  
+  /* Центрируем блок */
+  width: 85vw !important;
+  margin-left: calc(50% - 42.5vw) !important; /* 85vw / 2 = 42.5vw */
+  margin-right: calc(50% - 42.5vw) !important;
+}
+
+/* Стили изображения */
+.fuel .slides-row.full-bleed img.full-width-fuel {
+  width: 100% !important;           /* 100% от родителя (85vw) */
+  max-width: none !important;
+  min-height: auto !important;
+  height: auto !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  
+  /* Возвращаем эстетику */
+  border-radius: 20px !important;
+  box-shadow: 0 25px 70px rgba(0,0,0,0.8) !important;
+  border: 2px solid rgba(100, 100, 150, 0.3) !important;
+  
+  object-fit: contain;              /* чтобы изображение не обрезалось */
+  display: block !important;
+}
+
+/* ===== Адаптив для планшетов и мобильных ===== */
+@media (max-width: 1200px) {
+  .fuel .slides-row.full-bleed {
+    width: 92vw !important;
+    margin-left: calc(50% - 46vw) !important;
+    margin-right: calc(50% - 46vw) !important;
+  }
+}
+
+@media (max-width: 900px) {
+  .fuel .slides-row.full-bleed {
+    width: 95vw !important;
+    margin-left: calc(50% - 47.5vw) !important;
+    margin-right: calc(50% - 47.5vw) !important;
+  }
+  
+  .fuel .slides-row.full-bleed img.full-width-fuel {
+    border-radius: 16px !important;
+    min-height: auto !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .fuel .slides-row.full-bleed {
+    width: 100vw !important;
+    margin-left: calc(50% - 50vw) !important;
+    margin-right: calc(50% - 50vw) !important;
+  }
+  
+  .fuel .slides-row.full-bleed img.full-width-fuel {
+    border-radius: 12px !important;
+  }
+}
+
+/* ===== ФИКС v2: Яндекс.Go — Без обрезки, 86% ширины ===== */
+
+.yandex-go .slides-row {
+  display: grid !important;
+  grid-template-columns: repeat(2, 1fr) !important;
+  gap: 30px !important;
+  
+  /* 86% ширины экрана (по 7% отступы слева и справа) */
+  width: 86vw !important;
+  margin-left: calc(50% - 43vw) !important;
+  margin-right: calc(50% - 43vw) !important;
+  max-width: none !important;
+  padding: 0 !important;
+  overflow: visible !important; /* Гарантируем, что ничего не обрезается */
+}
+
+.yandex-go .slides-row img {
+  width: 100% !important;
+  height: auto !important; /* Высота подстраивается автоматически */
+  min-height: auto !important; /* Убираем фиксированную высоту */
+  object-fit: contain !important; /* Показываем картинку целиком */
+  display: block !important;
+  
+  /* Стиль сохраняем */
+  border-radius: 20px !important;
+  box-shadow: 0 25px 70px rgba(0,0,0,0.8) !important;
+  border: 2px solid rgba(100, 100, 150, 0.3) !important;
+  background: #14141b; /* Фон под картинкой, если пропорции не совпадут */
+}
+
+/* ===== Адаптив для планшетов ===== */
+@media (max-width: 1200px) {
+  .yandex-go .slides-row {
+    width: 90vw !important;
+    margin-left: calc(50% - 45vw) !important;
+    margin-right: calc(50% - 45vw) !important;
+    gap: 25px !important;
+  }
+}
+
+/* ===== Адаптив для мобильных (1 колонка) ===== */
+@media (max-width: 900px) {
+  .yandex-go .slides-row {
+    grid-template-columns: 1fr !important;
+    width: 95vw !important;
+    margin-left: calc(50% - 47.5vw) !important;
+    margin-right: calc(50% - 47.5vw) !important;
+    gap: 20px !important;
+  }
+}
+
+/* ===== Маленькие телефоны ===== */
+@media (max-width: 480px) {
+  .yandex-go .slides-row {
+    width: 100vw !important;
+    margin-left: calc(50% - 50vw) !important;
+    margin-right: calc(50% - 50vw) !important;
+  }
+}
+
+/* ===== Тарифы LiveCard — Вертикальный стек, 75% ширины ===== */
+
+.tariffs img {
+  display: block !important;
+  width: 75vw !important;
+  max-width: none !important;
+  height: auto !important;
+  margin: 0 auto 40px auto !important; /* Центрирование + отступ снизу */
+  border-radius: 20px !important;
+  box-shadow: 0 25px 70px rgba(0,0,0,0.8) !important;
+  border: 2px solid rgba(100, 100, 150, 0.3) !important;
+  object-fit: contain !important;
+}
+
+/* Последней картинке убираем большой отступ снизу */
+.tariffs img:last-of-type {
+  margin-bottom: 20px !important;
+}
+
+/* ===== Адаптив для планшетов ===== */
+@media (max-width: 1200px) {
+  .tariffs img {
+    width: 85vw !important;
+    margin: 0 auto 35px auto !important;
+  }
+}
+
+/* ===== Адаптив для мобильных ===== */
+@media (max-width: 900px) {
+  .tariffs img {
+    width: 92vw !important;
+    margin: 0 auto 30px auto !important;
+    border-radius: 16px !important;
+  }
+}
+
+/* ===== Маленькие телефоны ===== */
+@media (max-width: 480px) {
+  .tariffs img {
+    width: 96vw !important;
+    margin: 0 auto 25px auto !important;
+    border-radius: 12px !important;
+  }
+}
+
+/* ===== Рефералка — ИСПРАВЛЕНИЕ: текст по центру ===== */
+
+/* Возвращаем padding контейнеру для текста */
+.promo .container {
+  max-width: 1200px !important;
+  padding: 0 20px !important; /* Вернули отступы */
+  margin: 0 auto !important;
+  width: 100% !important;
+  overflow: visible !important;
+}
+
+/* Картинки выходят за пределы контейнера */
+.promo-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+  
+  /* Выходим за пределы container */
+  width: calc(90vw - 40px) !important; /* 90vw минус padding контейнера */
+  max-width: calc(1200px - 40px) !important;
+  margin: 0 auto 50px auto !important;
+  
+  /* Центрируем через transform */
+  position: relative !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+}
+
+/* Текст и кнопка — по центру */
+.promo p {
+  text-align: center !important;
+  font-size: 1.3rem !important;
+  color: var(--gray) !important;
+  margin-bottom: 30px !important;
+  max-width: 900px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.promo .btn-primary.center {
+  display: block !important;
+  margin: 0 auto 30px auto !important;
+  text-align: center !important;
+}
+
+/* Картинки */
+.promo-grid img {
+  width: 100% !important;
+  height: auto !important;
+  border-radius: 20px !important;
+  box-shadow: 0 25px 70px rgba(0,0,0,0.8) !important;
+  border: 2px solid rgba(100, 100, 150, 0.3) !important;
+  object-fit: contain !important;
+  display: block !important;
+}
+
+/* ===== Адаптив ===== */
+@media (max-width: 900px) {
+  .promo-grid {
+    grid-template-columns: 1fr !important;
+    width: calc(95vw - 40px) !important;
+    max-width: calc(100% - 40px) !important;
+    gap: 30px !important;
+  }
+  
+  .promo p {
+    font-size: 1.1rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .promo-grid {
+    width: calc(100vw - 20px) !important;
+    max-width: calc(100% - 20px) !important;
+    gap: 20px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+  }
+  
+  .promo .container {
+    padding: 0 10px !important;
+  }
+}
+
+/* ===== FAQ — Одна картинка 80% ширины, по центру ===== */
+
+.faq-single-image {
+  width: 80vw !important;
+  margin: 0 auto 50px auto !important;
+  max-width: 1200px !important;
+  display: block !important;
+}
+
+.faq-single-image img {
+  width: 100% !important;
+  height: auto !important;
+  border-radius: 20px !important;
+  box-shadow: 0 25px 70px rgba(0,0,0,0.8) !important;
+  border: 2px solid rgba(100, 100, 150, 0.3) !important;
+  object-fit: contain !important;
+  display: block !important;
+}
+
+/* ===== Адаптив ===== */
+@media (max-width: 1200px) {
+  .faq-single-image {
+    width: 85vw !important;
+  }
+}
+
+@media (max-width: 900px) {
+  .faq-single-image {
+    width: 92vw !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .faq-single-image {
+    width: 96vw !important;
+  }
+  
+  .faq-single-image img {
+    border-radius: 16px !important;
+  }
+}
+
+/* ===== Видео-инструкции — 4 видео ===== */
+
+.video-tutorials {
+  background: linear-gradient(to bottom, transparent, #0d0d14);
+  padding: 100px 0;
+}
+
+.section-subtitle {
+  text-align: center;
+  font-size: 1.3rem;
+  color: var(--gray);
+  margin: -40px auto 60px auto;
+  max-width: 700px;
+}
+
+.video-grid-4 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+  width: 86vw;
+  margin: 0 auto;
+  max-width: 1400px;
+}
+
+.video-card {
+  background: var(--card);
+  border-radius: 20px;
+  border: 2px solid rgba(100, 100, 150, 0.3);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.video-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 30px 80px rgba(125, 42, 232, 0.3);
+  border-color: rgba(125, 42, 232, 0.5);
+}
+
+.video-wrapper {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.video-title {
+  text-align: center;
+  color: var(--text);
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 20px;
+  margin: 0;
+}
+
+/* ===== Адаптив для планшетов ===== */
+@media (max-width: 1200px) {
+  .video-grid-4 {
+    width: 92vw;
+    gap: 30px;
+  }
+}
+
+/* ===== Адаптив для мобильных (1 колонка) ===== */
+@media (max-width: 900px) {
+  .video-tutorials {
+    padding: 80px 0;
+  }
+  
+  .video-grid-4 {
+    grid-template-columns: 1fr;
+    width: 95vw;
+    gap: 30px;
+  }
+  
+  .section-subtitle {
+    font-size: 1.1rem;
+    margin: -30px auto 50px auto;
+  }
+  
+  .video-title {
+    font-size: 1rem;
+    padding: 15px;
+  }
+}
+
+/* ===== Маленькие телефоны ===== */
+@media (max-width: 480px) {
+  .video-grid-4 {
+    width: 98vw;
+    gap: 25px;
+  }
+  
+  .video-card {
+    border-radius: 16px;
+  }
+}
+
+/* ===== Исправление: Кнопка "Выбрать карту" — больше и меньше отступ ===== */
+
+/* 1. Увеличиваем кнопку */
+.tariffs .btn-primary.center {
+  padding: 20px 60px !important;
+  font-size: 1.5rem !important;
+  margin: 40px auto 60px auto !important; /* Уменьшили нижний отступ */
+  max-width: 400px !important;
+}
+
+/* 2. Уменьшаем отступ между секциями Tariffs и Reviews */
+.section.tariffs {
+  padding-bottom: 60px !important; /* Было 120px */
+}
+
+.section.reviews {
+  padding-top: 60px !important; /* Было 120px */
+}
+
+/* 3. Hover-эффект для большой кнопки */
+.tariffs .btn-primary.center:hover {
+  transform: translateY(-3px) !important;
+  box-shadow: 0 15px 40px rgba(125, 42, 232, 0.5) !important;
+}
+
+/* ===== Адаптив для мобильных ===== */
+@media (max-width: 900px) {
+  .tariffs .btn-primary.center {
+    padding: 16px 40px !important;
+    font-size: 1.3rem !important;
+    margin: 30px auto 50px auto !important;
+    max-width: 320px !important;
+  }
+  
+  .section.tariffs {
+    padding-bottom: 20px !important;
+  }
+  
+  .section.reviews {
+    padding-top: 20px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .tariffs .btn-primary.center {
+    padding: 14px 30px !important;
+    font-size: 1.2rem !important;
+    max-width: 280px !important;
+  }
+}
+
+/* ===== Исправление v2: Минимальное расстояние между кнопкой и отзывами ===== */
+
+/* 1. Убираем отступы у секции Tariffs */
+.section.tariffs {
+  padding-bottom: 20px !important;
+  margin-bottom: 0 !important;
+}
+
+/* 2. Убираем отступы у секции Reviews */
+.section.reviews {
+  padding-top: 20px !important;
+  margin-top: 0 !important;
+}
+
+/* 3. Уменьшаем отступ у кнопки */
+.tariffs .btn-primary.center {
+  margin-bottom: 20px !important; /* Было 60px */
+}
+
+/* 4. Уменьшаем отступ у заголовка "Что говорят участники" */
+.reviews .section-title {
+  margin-bottom: 20px !important; /* Было 60px */
+}
+
+/* ===== Адаптив для мобильных ===== */
+@media (max-width: 900px) {
+  .section.tariffs {
+    padding-bottom: 15px !important;
+  }
+  
+  .section.reviews {
+    padding-top: 15px !important;
+  }
+  
+  .tariffs .btn-primary.center {
+    margin-bottom: 25px !important;
+  }
+  
+  .reviews .section-title {
+    margin-bottom: 30px !important;
+  }
+}
+
+/* ===== Калькулятор — финальные штрихи ===== */
+
+.calc-inputs label {
+  display: block;
+  margin: 25px 0 12px;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.calc-inputs select,
+.calc-inputs input[type="range"] {
+  width: 100%;
+  padding: 16px;
+  border-radius: 12px;
+  background: #1e1e2e;
+  border: 1px solid #333;
+  color: white;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+.calc-inputs input[type="range"] {
+  padding: 0;
+  height: 8px;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  border-radius: 4px;
+  outline: none;
+}
+
+.calc-inputs input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 24px;
+  height: 24px;
+  background: white;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.calc-note {
+  font-size: 0.9rem;
+  color: var(--gray);
+  margin-top: 20px;
+  font-style: italic;
+}
+
+.result-circle {
+  width: 260px;
+  height: 260px;
+  border: 5px solid var(--primary);
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  box-shadow: 0 0 40px rgba(125,42,232,0.3);
+  background: rgba(125,42,232,0.1);
+}
+
+#result {
+  font-size: 3.2rem;
+  font-weight: 900;
+  color: var(--accent);
+  margin: 10px 0;
+  line-height: 1;
+}
+
+/* ===== Адаптив для калькулятора ===== */
+@media (max-width: 900px) {
+  .calc-grid {
+    grid-template-columns: 1fr !important;
+    gap: 40px !important;
+  }
+  
+  .result-circle {
+    width: 220px;
+    height: 220px;
+  }
+  
+  #result {
+    font-size: 2.5rem;
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 15px 40px rgba(125, 42, 232, 0.5); }
+  50% { box-shadow: 0 20px 60px rgba(0, 212, 255, 0.7); }
+}
+
+.calc-section .btn-primary.center {
+  animation: pulse-glow 2s infinite ease-in-out;
+}

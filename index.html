@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Live Cashback — Экономия до 90% каждый день</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+  <!-- Навбар -->
+  <nav class="navbar">
+    <div class="container">
+      <div class="logo">LIVE<span>CASHBACK</span></div>
+      <a href="https://t.me/LiveCashbackBot?start=LC146354e8c80f3" class="btn-primary" target="_blank">Запустить бота</a>
+    </div>
+  </nav>
+
+  <!-- Hero + главный слоган -->
+  <section class="hero">
+    <div class="container">
+      <h1>Экономия будущего <span>уже сегодня</span></h1>
+      <p>Революционная система скидок: OZON, Wildberries, Яндекс Go и заправки. До 90% выгоды ежедневно!</p>
+      <img src="img/page-9.jpeg" alt="Live Cashback Intro" class="hero-main-img"/> <!-- или Screenshot_3, если ярче -->
+    </div>
+  </section>
+
+  <!-- Яндекс.Go — Путь клиента -->
+  <section class="section yandex-go">
+    <div class="container">
+      <h2 class="section-title gradient-text">Сервисы Яндекс.Go — Путь клиента</h2>
+      <div class="slides-row">
+  <img src="img/page-7.jpeg"   alt="Вход в Яндекс.Go" />
+  <img src="img/page-2.jpeg"   alt="Регистрация" />
+  <img src="img/page-3.jpeg"   alt="Бизнес-аккаунт" />
+  <img src="img/page-4.jpeg"   alt="Способы оплаты" />
+  <img src="img/page-5.jpeg"   alt="..." />               <!-- добавил закрытие -->
+  <img src="img/page-6.jpeg"   alt="..." />               <!-- добавил закрытие -->
+</div>
+      <p class="center-text">Войдите или зарегистрируйтесь → Подключите бизнес-аккаунт → Оплачивайте баллами</p>
+    </div>
+  </section>
+
+  <!-- Заправки — Инструкция -->
+  <section class="section fuel">
+  <div class="container">
+    <h2 class="section-title gradient-text">Яндекс.Заправки — Заправляйтесь выгодно</h2>
+  </div>
+  
+  <!-- Изображение вынесено НАРУЖУ контейнера -->
+  <div class="slides-row full-bleed">
+    <img src="img/page-22.jpeg" alt="Выбор колонки" class="full-width-fuel"/>
+  </div>
+</section>
+
+  <!-- Тарифы LiveCard -->
+  <section class="section tariffs">
+    <div class="container">
+      <h2 class="section-title">Выбери свою LiveCard</h2>
+      <img src="img/page-10.jpeg" alt="Тарифы">
+      <img src="img/page-11.jpeg" alt="Тарифы">
+      <img src="img/page-12.jpeg" alt="Тарифы">
+      <div class="tariff-list">
+      <a href="https://t.me/LiveCashbackBot?start=LC146354e8c80f3" class="btn-primary center" target="_blank">Выбрать карту</a>
+    </div>
+  </section>
+
+  <!-- Калькулятор (оставляем как был) -->
+  <!-- Калькулятор -->
+<section id="calculator" class="section calc-section">
+  <div class="container">
+    <h2 class="section-title gradient-text">Рассчитайте свою выгоду</h2>
+    
+    <div class="calc-card">
+      <div class="calc-grid">
+        
+        <!-- Левая часть: вводы -->
+        <div class="calc-inputs">
+          <label for="nominal">Сумма пополнения (₽)</label>
+          <select id="nominal">
+            <option value="5000">5 000 ₽</option>
+            <option value="10000">10 000 ₽</option>
+            <option value="20000" selected>20 000 ₽</option>
+            <option value="40000">40 000 ₽</option>
+            <option value="80000">80 000 ₽</option>
+            <option value="150000">150 000 ₽</option>
+          </select>
+          
+          <label for="days">Срок: <span id="daysValue">30</span> дней</label>
+          <input type="range" id="days" min="1" max="365" value="30" step="1"/>
+          
+          <p class="calc-note">*Расчёт ориентировочный, не является публичной офертой</p>
+        </div>
+        
+        <!-- Правая часть: результат -->
+        <div class="calc-result">
+          <div class="result-circle">
+            <span style="font-size:1.2rem;color:var(--gray)">Вы получите</span>
+            <span id="result">0</span>
+            <span style="font-size:1.2rem;color:var(--accent)">баллов</span>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+    
+    <a href="https://t.me/LiveCashbackBot?start=LC146354e8c80f3" class="btn-primary center huge"  target="_blank" style="margin-top:40px">
+      Начать зарабатывать
+    </a>
+  </div>
+</section>
+
+  <!-- Отзывы / примеры обмена -->
+  <section class="section reviews">
+    <div class="container">
+      <h2 class="section-title">Что говорят участники</h2>
+      <div class="reviews-grid">
+        <img src="img/photo_2026-03-03_12-15-34.jpg" alt="Кабинет"/>
+        <img src="img/photo_2026-03-03_12-15-41.jpg" alt="Выплаты"/>
+        <img src="img/photo_2026-03-03_12-15-46.jpg" alt="Сертификат Ozon"/>
+        <img src="img/photo_2026-03-03_12-15-51.jpg" alt="Обмен баллов"/>
+        <img src="img/photo_2026-03-03_12-15-57.jpg" alt="История"/>
+        <!-- Добавь ещё 5–10 скринов, они все подгрузятся -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Рефералка + Промо -->
+<section class="section promo">
+  <div class="container">
+    <h2 class="section-title gradient-text">Реферальная программа — Приглашай и зарабатывай!</h2>
+    
+    <!-- Обёртка для картинок -->
+    <div class="promo-grid">
+      <img src="img/page-16.jpeg" alt="Рефералка"/>
+      <img src="img/page-18.jpeg" alt="Рефералка"/>
+    </div>
+    
+    <p>Приглашай друзей → Получай % от их покупок + крупные бонусы (до 500 000 баллов!)</p>
+    <a href="https://t.me/LiveCashbackBot?start=LC146354e8c80f3" class="btn-primary large center" target="_blank">Присоединиться и пригласить</a>
+  </div>
+</section>
+
+  <!-- FAQ -->
+<section class="section faq">
+  <div class="container">
+    <h2 class="section-title">Часто задаваемые вопросы</h2>
+    <div class="faq-single-image">
+      <img src="img/page-25.jpeg" alt="FAQ"/>
+    </div>
+  </div>
+</section>
+
+  <!-- Видео-инструкции -->
+<section class="section video-tutorials">
+  <div class="container">
+    <h2 class="section-title gradient-text">Короткие инструкции и презентация</h2>
+    <p class="section-subtitle">Посмотрите 4 коротких видео о том, как работает Live Cashback</p>
+    
+    <div class="video-grid-4">
+      <!-- Видео 1 -->
+      <div class="video-card">
+        <div class="video-wrapper">
+          <iframe src="https://www.youtube.com/embed/Yx39zpSIXN8" 
+                  frameborder="0" 
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                  allowfullscreen>
+          </iframe>
+        </div>
+        <p class="video-title">Как зарегистрироваться</p>
+      </div>
+      
+      <!-- Видео 2 -->
+      <div class="video-card">
+        <div class="video-wrapper">
+          <iframe src="https://www.youtube.com/embed/6ZiMAbRH8b8" 
+                  frameborder="0" 
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                  allowfullscreen>
+          </iframe>
+        </div>
+        <p class="video-title">Как заказать сертификат</p>
+      </div>
+      
+      <!-- Видео 3 -->
+      <div class="video-card">
+        <div class="video-wrapper">
+          <iframe src="https://www.youtube.com/embed/xuusZ8koKh4" 
+                  frameborder="0" 
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                  allowfullscreen>
+          </iframe>
+        </div>
+        <p class="video-title">Активация сертификата</p>
+      </div>
+      
+      <!-- Видео 4 -->
+      <div class="video-card">
+        <div class="video-wrapper">
+          <iframe src="https://www.youtube.com/embed/FSh7mizyXJI" 
+                  frameborder="0" 
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                  allowfullscreen>
+          </iframe>
+        </div>
+        <p class="video-title">Презентация проекта</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- Финальный CTA -->
+  <section class="cta-final">
+    <div class="container">
+      <h2>Живите лучше с каждым днём!</h2>
+      <a href="https://t.me/LiveCashbackBot?start=LC146354e8c80f3" class="btn-primary huge" target="_blank">Перейти в бота и начать</a>
+      <p>Техподдержка: @yazap444 • @yazap444 (топливо)</p>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
